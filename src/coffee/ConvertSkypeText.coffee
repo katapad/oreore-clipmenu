@@ -20,7 +20,7 @@ _convertText = (text) ->
       name = line.replace(nameReg, "$3")
       t = line.replace(nameReg, "$4")
       unless lastName is name
-        result +=  '\n\n>' + name + "\n"
+        result +=  '\n\n' + name + "  \n"
 
       lastName = name
       #t = _checkLink(t)

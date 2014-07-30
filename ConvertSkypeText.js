@@ -22,7 +22,7 @@ _convertText = function(text) {
       name = line.replace(nameReg, "$3");
       t = line.replace(nameReg, "$4");
       if (lastName !== name) {
-        result += '\n\n>' + name + "\n";
+        result += '\n\n' + name + "  \n";
       }
       lastName = name;
       t = t.replace(/^\s/, '');
