@@ -17,6 +17,8 @@ class TableParser
 
     for line, i in lines
       if i == 0
+        # tableのlength揃えようかとおもったけど、めんどくさいな
+#        headLength = @_parseHeadLength line
         text = @_parseHead line
       else
         text = @_parseBody line
@@ -24,6 +26,11 @@ class TableParser
       result += text + '\n'
 
     return result
+
+
+  _parseHeadLength: (line)->
+    cells = line.split('\t')
+    (cell.length for cell in cells)
 
 
   _parseHead: (line)->
