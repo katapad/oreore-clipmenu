@@ -57,7 +57,8 @@ class TableParser
     return result
 
 
-do ->
-  text = new TableParser().parse(clipText)
-  console.log text
-  return text
+
+
+text = new TableParser().parse(clipText)
+console.log text
+return text

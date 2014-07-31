@@ -1,4 +1,4 @@
-var TableParser, clipText;
+var TableParser, clipText, text;
 
 clipText = 'hoge	fuga	bar\nOK	N/A	N/A\nOK	N/A	N/A\nOK	OK	OK\nOK	OK	OK';
 
@@ -21,18 +21,39 @@ TableParser = (function() {
     return result;
   };
 
+  TableParser.prototype._parseHeadLength = function(line) {
+    var cell, cells, _i, _len, _results;
+    cells = line.split('\t');
+    _results = [];
+    for (_i = 0, _len = cells.length; _i < _len; _i++) {
+      cell = cells[_i];
+      _results.push(cell.length);
+    }
+    return _results;
+  };
+
   TableParser.prototype._parseHead = function(line) {
-    var cell, cells, head, separator, _i, _len;
+    var cell, cells, head, sep, separator, _i, _len;
     cells = line.split('\t');
     head = cells.join(' | ');
     head = "| " + head + " |";
-    separator = '| ---- ';
+    separator = '';
     for (_i = 0, _len = cells.length; _i < _len; _i++) {
       cell = cells[_i];
-      separator += '| ---- ';
+      sep = '| === ';
+      separator += sep.replace('===', this._getSep(cell.length));
     }
     separator += '|';
     return head + '\n' + separator;
+  };
+
+  TableParser.prototype._getSep = function(length) {
+    var i, result, _i;
+    result = '';
+    for (i = _i = 0; 0 <= length ? _i < length : _i > length; i = 0 <= length ? ++_i : --_i) {
+      result += '-';
+    }
+    return result;
   };
 
   TableParser.prototype._parseBody = function(line) {
@@ -47,9 +68,8 @@ TableParser = (function() {
 
 })();
 
-(function() {
-  var text;
-  text = new TableParser().parse(clipText);
-  console.log(text);
-  return text;
-})();
+text = new TableParser().parse(clipText);
+
+console.log(text);
+
+return text;
