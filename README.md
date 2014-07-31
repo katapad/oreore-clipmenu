@@ -32,4 +32,23 @@ watch + coffee
 よろしくおねがいいたします。
 
 ```
-``
+
+
+## `table2md.js`
+
+Excelなどに書いたテーブルをmd形式に変換します。
+
+	hoge	fuga	bar
+	OK	N/A	N/A
+	OK	N/A	N/A
+	OK	OK	OK
+	OK	OK	OK
+	
+	↓変換後
+	
+	| hoge | fuga | bar |
+	| ---- | ---- | ---- | ---- |
+	| OK | N/A | N/A |
+	| OK | N/A | N/A |
+	| OK | OK | OK |
+	| OK | OK | OK |
