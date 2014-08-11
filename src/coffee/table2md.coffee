@@ -1,12 +1,12 @@
 
 
-clipText = '''
-hoge	fuga	bar
-OK	N/A	N/A
-OK	N/A	N/A
-OK	OK	OK
-OK	OK	OK
-'''
+#clipText = '''
+#hoge	fuga	bar
+#OK	N/A	N/A
+#OK	N/A	N/A
+#OK	OK	OK
+#OK	OK	OK
+#'''
 
 class TableParser
   constructor: () ->
@@ -60,5 +60,4 @@ class TableParser
 
 
 text = new TableParser().parse(clipText)
-console.log text
 return text
