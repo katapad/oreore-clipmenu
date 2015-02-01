@@ -52,3 +52,26 @@ Excelなどに書いたテーブルをmd形式に変換します。
 	| OK | N/A | N/A |
 	| OK | OK | OK |
 	| OK | OK | OK |
+
+## `ConvertKindleHighlights.js`
+
+Kindleのハイライトをコピペするときに使う。
+
+https://kindle.amazon.co.jp/your_highlights
+
+
+``` 元.txt
+quick fox .... Read more at location 119   • Delete this highlight
+Add a note
+本当の問題は、自分が本心からやりたいRead more at location 122   • Delete this highlight
+Add a note
+```
+↓
+
+```返還後.txt
+location: 119
+quick fox ....
+
+location: 122
+本当の問題は、自分が本心からやりたい
+```
