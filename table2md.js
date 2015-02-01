@@ -1,6 +1,4 @@
-var TableParser, clipText, text;
-
-clipText = 'hoge	fuga	bar\nOK	N/A	N/A\nOK	N/A	N/A\nOK	OK	OK\nOK	OK	OK';
+var TableParser, text;
 
 TableParser = (function() {
   function TableParser() {}
@@ -69,7 +67,5 @@ TableParser = (function() {
 })();
 
 text = new TableParser().parse(clipText);
-
-console.log(text);
 
 return text;
