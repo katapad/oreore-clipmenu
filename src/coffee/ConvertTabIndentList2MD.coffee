@@ -1,12 +1,12 @@
-clipText = """
-list1
-	ABC
-	DEF
-		1
-			xyz
-		2
-			www
-"""
+#clipText = """
+#list1
+#	ABC
+#	DEF
+#		1
+#			xyz
+#		2
+#			www
+#"""
 
 class ConvertTabIndentList2MD
   constructor: () ->
@@ -21,7 +21,6 @@ class ConvertTabIndentList2MD
     return str.replace(/^\n/, '')
 
 converter = new ConvertTabIndentList2MD()
-
 #console.log converter.execute(clipText)
 return converter.execute(clipText)
 
