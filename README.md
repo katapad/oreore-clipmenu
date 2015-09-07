@@ -68,7 +68,7 @@ Add a note
 ```
 ↓
 
-```返還後.txt
+```変換後.txt
 location: 119
 quick fox ....
 
