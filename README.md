@@ -12,6 +12,9 @@ util for me!
 	
 ### 開発したいときは
 
+	$ npm i
+	
+
 watch + coffee
 
 	$ gulp 
@@ -75,3 +78,31 @@ quick fox ....
 location: 122
 本当の問題は、自分が本心からやりたい
 ```
+
+## `ConvertTabIndentList2MD.js`
+
+タブインデントのリストをMarkdownリストに変換する
+
+
+``` original.txt
+list1
+	ABC
+	DEF
+		1
+			xyz
+		2
+			www
+```
+
+↓
+
+```converted.md
+* list1
+	* ABC
+	* DEF
+		* 1
+			* xyz
+		* 2
+			* www
+```
+

@@ -4,10 +4,10 @@ TableParser = (function() {
   function TableParser() {}
 
   TableParser.prototype.parse = function(text) {
-    var i, line, lines, result, _i, _len;
+    var i, j, len, line, lines, result;
     lines = text.split('\n');
     result = '';
-    for (i = _i = 0, _len = lines.length; _i < _len; i = ++_i) {
+    for (i = j = 0, len = lines.length; j < len; i = ++j) {
       line = lines[i];
       if (i === 0) {
         text = this._parseHead(line);
@@ -20,24 +20,24 @@ TableParser = (function() {
   };
 
   TableParser.prototype._parseHeadLength = function(line) {
-    var cell, cells, _i, _len, _results;
+    var cell, cells, j, len, results;
     cells = line.split('\t');
-    _results = [];
-    for (_i = 0, _len = cells.length; _i < _len; _i++) {
-      cell = cells[_i];
-      _results.push(cell.length);
+    results = [];
+    for (j = 0, len = cells.length; j < len; j++) {
+      cell = cells[j];
+      results.push(cell.length);
     }
-    return _results;
+    return results;
   };
 
   TableParser.prototype._parseHead = function(line) {
-    var cell, cells, head, sep, separator, _i, _len;
+    var cell, cells, head, j, len, sep, separator;
     cells = line.split('\t');
     head = cells.join(' | ');
     head = "| " + head + " |";
     separator = '';
-    for (_i = 0, _len = cells.length; _i < _len; _i++) {
-      cell = cells[_i];
+    for (j = 0, len = cells.length; j < len; j++) {
+      cell = cells[j];
       sep = '| === ';
       separator += sep.replace('===', this._getSep(cell.length));
     }
@@ -46,9 +46,9 @@ TableParser = (function() {
   };
 
   TableParser.prototype._getSep = function(length) {
-    var i, result, _i;
+    var i, j, ref, result;
     result = '';
-    for (i = _i = 0; 0 <= length ? _i < length : _i > length; i = 0 <= length ? ++_i : --_i) {
+    for (i = j = 0, ref = length; 0 <= ref ? j < ref : j > ref; i = 0 <= ref ? ++j : --j) {
       result += '-';
     }
     return result;

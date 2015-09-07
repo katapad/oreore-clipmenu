@@ -8,12 +8,12 @@ ConvertKindleHighlights = (function() {
   function ConvertKindleHighlights() {}
 
   ConvertKindleHighlights.prototype.convert = function(clipText) {
-    var line, lines, location, result, _i, _len;
+    var i, len, line, lines, location, result;
     clipText = clipText.replace(/Add a note\n?/gm, '');
     lines = clipText.split('\n');
     result = [];
-    for (_i = 0, _len = lines.length; _i < _len; _i++) {
-      line = lines[_i];
+    for (i = 0, len = lines.length; i < len; i++) {
+      line = lines[i];
       if (line === 'Add a note') {
         continue;
       }
